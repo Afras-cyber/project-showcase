@@ -7,7 +7,7 @@ async function page() {
   const products = await getProducts();
   return (
     <div className="container mx-auto py-2 px-5 my-20">
-      <h1>Product Listing</h1>
+      <h1 className="text-3xl font-bold mb-2">Product Listing</h1>
       <div className="flex  flex-wrap gap-x-10 gap-y-8 ">
         {products.map((product) => (
           <ProductCard key={product.id} {...product} />

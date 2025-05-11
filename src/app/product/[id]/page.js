@@ -11,7 +11,9 @@ async function page({ params }) {
     return notFound();
   }
   return (
-    <div className="container mx-auto py-2 px-5 my-20 h-screen">
+    <div className="container mx-auto py-2 px-5 my-20 min-h-screen">
+      <div className="rounded-2xl shadow-[4px_4px_6px_rgba(0,0,0,0)]  shadow-gray-400/50 w-full  py-14 px-10 bg-blue-50/55 my-10"> 
+
       <div className="grid grid-cols-1 md:grid-cols-5">
         <div className="w-full col-span-2">
           <Image
@@ -19,21 +21,22 @@ async function page({ params }) {
             alt={products.title}
             width={500}
             height={500}
-            className="w-8/12 h-auto object-fit"
+            className="w-8/12 h-auto object-fit m-auto "
           />
         </div>
-        <div className="flex flex-col justify-center items-start p-5 md:col-span-3">
+        <div className="flex flex-col justify-start items-start p-5 md:col-span-3 ">
           <h1 className="text-3xl font-bold mb-2">{products.title}</h1>
           <p className="text-lg text-gray-700 mb-4">{products.description}</p>
 
           <div className="my-2">
             <h3 className="text-lg font-semibold">Category:</h3>
-            <p className="text-gray-600">{products.category}</p>
+            <p className="text-gray-600 capitalize">{products.category}</p>
           </div>
-          <h2 className="text-2xl font-bold text-blue-600 mb-4">
+          <h2 className="text-4xl font-extrabold text-blue-600 my-4">
             Rs {products.price}
           </h2>
         </div>
+      </div>
       </div>
     </div>
   );
