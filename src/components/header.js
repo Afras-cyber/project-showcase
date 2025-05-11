@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Header() {
@@ -5,18 +6,18 @@ function Header() {
     <div className="bg-blue-500 w-full shadow-lg fixed top-0 z-50">
       <div className="container mx-auto py-3 px-5">
         <div className="flex justify-between items-center">
-          <div className="text-2xl font-bold text-white">PS</div>
+          <Link href="/" className="text-2xl font-bold text-white">PS</Link>
           <nav className="space-x-4">
-            <a href="#" className="text-white hover:text-blue-200">
+            <Link href="/" className="text-white hover:text-blue-200">
               Home
-            </a>
+            </Link>
 
-            <a href="#" className="text-white hover:text-blue-200">
+            <Link href="/products" className="text-white hover:text-blue-200">
               Shop
-            </a>
-            <a href="#" className="text-white hover:text-blue-200">
+            </Link>
+            <Link href="#" className="text-white hover:text-blue-200">
               Contact
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
