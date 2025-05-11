@@ -1,15 +1,8 @@
 import ProductCard from "@/components/card";
-
-// This is a simple React component that renders a heading "Product Listing"
+import { getProducts } from "../actions/products.action";
+// for  Static Site Generation (SSG)
 export const dynamic = "force-static";
 
-async function getProducts() {
-  const res = await fetch("https://fakestoreapi.com/products");
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return res.json();
-}
 async function page() {
   const products = await getProducts();
   return (
