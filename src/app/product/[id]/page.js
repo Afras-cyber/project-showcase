@@ -1,12 +1,11 @@
 import { getProductById } from "@/app/actions/products.action";
 import Image from "next/image";
-import { notFound,useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 export const dynamic = "force-dynamic"; // for Server Side Rendering (SSR)
 
-
-async function page() {
-  const params = useParams();
+async function page({ params }) {
   const id = params?.id;
+
   const products = await getProductById(id);
   if (!products) {
     return notFound();
@@ -21,7 +20,7 @@ async function page() {
               alt={products.title}
               width={500}
               height={500}
-              className="w-auto md:w-8/12 h-[300px] md:h-auto object-fit m-auto "
+              className="w-auto md:w-8/12 h-auto md:h-auto object-fit m-auto "
             />
           </div>
           <div className="flex flex-col justify-start items-start p-5 md:col-span-3 ">
