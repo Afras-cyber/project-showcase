@@ -1,11 +1,12 @@
 import { getProductById } from "@/app/actions/products.action";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound,useParams } from "next/navigation";
 export const dynamic = "force-dynamic"; // for Server Side Rendering (SSR)
 
-async function page({ params }) {
-  const id = params?.id;
 
+async function page() {
+  const params = useParams();
+  const id = params?.id;
   const products = await getProductById(id);
   if (!products) {
     return notFound();
