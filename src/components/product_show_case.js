@@ -8,8 +8,6 @@ export default function ProductList({ initialProducts }) {
   // State for filters and mobile filter menu
   const [filters, setFilters] = useState({
     category: "",
-    minPrice: "",
-    maxPrice: "",
     minRating: "",
   });
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
@@ -21,17 +19,11 @@ export default function ProductList({ initialProducts }) {
         !filters.category ||
         product.category.toLowerCase() === filters.category.toLowerCase();
 
-      const minPriceMatch =
-        !filters.minPrice || product.price >= parseFloat(filters.minPrice);
-
-      const maxPriceMatch =
-        !filters.maxPrice || product.price <= parseFloat(filters.maxPrice);
-
       const minRatingMatch =
         !filters.minRating ||
         product.rating.rate >= parseFloat(filters.minRating);
 
-      return categoryMatch && minPriceMatch && maxPriceMatch && minRatingMatch;
+      return categoryMatch && minRatingMatch;
     });
   }, [initialProducts, filters]);
 
@@ -53,8 +45,6 @@ export default function ProductList({ initialProducts }) {
   const resetFilters = () => {
     setFilters({
       category: "",
-      minPrice: "",
-      maxPrice: "",
       minRating: "",
     });
     setIsMobileFilterOpen(false);
@@ -83,36 +73,6 @@ export default function ProductList({ initialProducts }) {
         </select>
       </div>
 
-      {/* Minimum Price Filter */}
-      <div className="space-y-2">
-        <label className="block text-sm font-medium text-gray-700">
-          Min Price
-        </label>
-        <input
-          type="number"
-          name="minPrice"
-          placeholder="Min Price"
-          value={filters.minPrice}
-          onChange={handleFilterChange}
-          className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-        />
-      </div>
-
-      {/* Maximum Price Filter */}
-      <div className="space-y-2">
-        <label className="block text-sm font-medium text-gray-700">
-          Max Price
-        </label>
-        <input
-          type="number"
-          name="maxPrice"
-          placeholder="Max Price"
-          value={filters.maxPrice}
-          onChange={handleFilterChange}
-          className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-        />
-      </div>
-
       {/* Rating Filter */}
       <div className="space-y-2">
         <label className="block text-sm font-medium text-gray-700">
@@ -132,13 +92,21 @@ export default function ProductList({ initialProducts }) {
           ))}
         </select>
       </div>
+      <div className="hidden  space-y-2 lg:flex justify-start items-end">
+        <button
+          onClick={resetFilters}
+          className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition"
+        >
+          Reset Filters
+        </button>
+      </div>
     </div>
   );
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 min-h-screen">
       {/* Mobile Filter Toggle */}
-      <div className="lg:hidden mb-4">
+      <div className="lg:hidden mb-4 mt-16">
         <button
           onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
           className="flex items-center justify-center w-full py-2 bg-gray-100 rounded-md hover:bg-gray-200 transition"
@@ -184,19 +152,11 @@ export default function ProductList({ initialProducts }) {
       {/* Desktop Filters */}
       <div className="hidden lg:block mb-6">
         <FilterInputs />
-        <div className="mt-4 flex justify-between items-center">
-          <button
-            onClick={resetFilters}
-            className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition"
-          >
-            Reset Filters
-          </button>
-        </div>
       </div>
 
       {/* Products Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {filteredProducts.length > 0 ? (
+      <div className="flex flex-wrap md:gap-x-10 gap-y-8 justify-center md:justify-start">
+      {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <ProductCard key={product.id} {...product} />
           ))
@@ -208,6 +168,9 @@ export default function ProductList({ initialProducts }) {
           </div>
         )}
       </div>
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      
+      </div> */}
     </div>
   );
 }

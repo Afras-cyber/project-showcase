@@ -2,9 +2,9 @@
 
 ## Project Overview
 
-This is a full-featured e-commerce web application built with Next.js 15, showcasing modern web development practices and providing a seamless shopping experience.
+This project is a mini product showcase web application built using Next.js 15 as part of the Front-End Developer Technical Challenge for Nascent Group. It features a responsive product listing page (powered by Static Site Generation), a dynamic product detail page (using Server-Side Rendering), and a simple contact form submitted via Next.js API routes. Product data is sourced from Fake Store API or a local JSON file, offering a smooth and efficient user experience.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js (recommended version 18.x or later)
@@ -41,7 +41,7 @@ bun dev
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application
 
-## 🌐 Rendering Strategies
+## Rendering Strategies
 
 This project leverages Next.js 15's flexible rendering options:
 
@@ -57,7 +57,7 @@ For dynamic server-side rendering:
 export const dynamic = "force-dynamic";
 ```
 
-## 📄 Page Structure
+## Page Structure
 
 The application consists of four main pages:
 
@@ -78,32 +78,26 @@ The application consists of four main pages:
    - Customer communication interface
    - Includes contact form or contact information
 
-## 🎨 User Interface
+## User Interface
 
 The UI design was carefully crafted using inspiration from:
 - Behance design portfolios
-- Google design references
+- Google references
 
-Key design principles:
-- Responsive layout
-- Clean and intuitive navigation
-- Attractive product presentation
-- User-friendly interaction elements
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 15
-- **Language**: TypeScript/JavaScript
-- **Styling**: Tailwind CSS (assumed, based on modern Next.js practices)
+- **Language**: JavaScript
+- **Styling**: Tailwind CSS 
+- **Icons**: react-icons
 - **Rendering**: Supports both SSG and SSR
 
-## 📞 Contact
+## Contact
 
 **Developer**: Ahamed Afras
 
 - Email : afras975@gmail.com
 - Contact No : +94 77 675 6287
-
 
 ---
 
