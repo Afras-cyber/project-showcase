@@ -72,7 +72,7 @@ The application consists of four main pages:
 
 3. **Product Details Page**
    - Detailed view of individual products
-   - Provides in-depth information, images, pricing, and purchase options
+   - Provides information, images,and pricing 
 
 4. **Contact Us Page**
    - Customer communication interface
