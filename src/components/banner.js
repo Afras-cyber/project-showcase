@@ -8,11 +8,11 @@ function Banner() {
     <div className="bg-gradient-to-r from-amber-100 to-amber-200 mt-14">
     <div className="container mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
       <div className="flex flex-col justify-center items-start space-y-6 order-2 md:order-1">
-        <div>
+        {/* <div>
           <span className="px-4 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">
             New Collection
           </span>
-        </div>
+        </div> */}
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
           Discover Quality Products
         </h1>
@@ -45,7 +45,7 @@ function Banner() {
           <img
             src="/images/hero.png"
             alt="Featured Products"
-            className="w-full max-w-lg h-auto object-cover rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105"
+            className="w-full max-w-lg h-auto object-cover rounded-lg shadow-lg transform transition-transform duration-500 "
           />
           <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-lg shadow-md">
             <div className="flex items-center space-x-2">

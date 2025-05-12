@@ -1,7 +1,10 @@
 import { getProductById } from "@/actions/products.action";
+import { StarRating } from "@/lib/service";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+
 export const dynamic = "force-dynamic"; // for Server Side Rendering (SSR)
+export const revalidate = 0; // for Server Side Rendering (SSR)
 
 async function page({ params }) {
   const id = params?.id;
@@ -24,13 +27,23 @@ async function page({ params }) {
             />
           </div>
           <div className="flex flex-col justify-start items-start p-5 md:col-span-3 ">
-            <h1 className="text-xl md:text-3xl font-bold mb-2">{products.title}</h1>
-            <p className="text-base md:text-lg text-gray-700 mb-4">{products.description}</p>
+            <h1 className="text-xl md:text-3xl font-bold mb-2">
+              {products.title}
+            </h1>
+            <p className="text-base md:text-lg text-gray-700 mb-4">
+              {products.description}
+            </p>
 
             <div className="my-2">
               <h3 className="text-lg font-semibold">Category:</h3>
               <p className="text-gray-600 capitalize">{products.category}</p>
             </div>
+            <div className="my-2">
+              <h3 className="text-lg font-semibold">Rating:</h3>
+              <StarRating rate={products.rating.rate} />
+              <p className="text-gray-600">{products.rating.count} reviews</p>
+            </div>
+
             <h2 className="text-4xl font-extrabold text-blue-600 my-4">
               Rs {products.price}
             </h2>
