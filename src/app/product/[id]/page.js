@@ -1,4 +1,4 @@
-import { getProductById } from "@/app/actions/products.action";
+import { getProductById } from "@/actions/products.action";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 export const dynamic = "force-dynamic"; // for Server Side Rendering (SSR)

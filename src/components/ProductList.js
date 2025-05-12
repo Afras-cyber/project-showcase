@@ -1,4 +1,4 @@
-import { getProducts } from "@/app/actions/products.action";
+import { getProducts } from "@/actions/products.action";
 import ProductCard from "./card";
 export const dynamic = "force-static";
 // for Static Site Generation (SSG)

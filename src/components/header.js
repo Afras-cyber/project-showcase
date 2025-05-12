@@ -15,7 +15,7 @@ function Header() {
             <Link href="/products" className="text-white hover:text-blue-200">
               Shop
             </Link>
-            <Link href="#" className="text-white hover:text-blue-200">
+            <Link href="/contact" className="text-white hover:text-blue-200">
               Contact
             </Link>
           </nav>
