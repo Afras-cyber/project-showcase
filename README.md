@@ -1,4 +1,4 @@
-# E-Commerce Next.js Project
+# E-Commerce Next.js Project - Nascent Group - Technical Challege 
 
 ## Project Overview
 
