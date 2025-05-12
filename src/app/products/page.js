@@ -3,6 +3,11 @@ import ProductShowCase from "@/components/product_show_case";
 
 export const dynamic = "force-static";
 
+export const metadata = {
+  title: "Products | Ahamed Afras",
+  description: "This is my Mini Product Showcase website",
+};
+
 export default async function ProductPage() {
   const products = await getProducts();
 

@@ -1,7 +1,13 @@
 import ContactUsForm from "@/components/contact_us_form";
 import React from "react";
 
+export const metadata = {
+  title: "Contact Us | Ahamed Afras",
+  description: "Get in touch with us",
+};
+
 function ContactUs() {
+  
   return (
     <div className="container mx-auto py-2 px-5 my-20 min-h-screen">
       <h1 className="text-3xl font-bold mb-2">Contact Us</h1>
@@ -15,7 +21,7 @@ function ContactUs() {
           <h2 className="text-lg font-semibold">Our Address:</h2>
           <p className="text-gray-600">Kegalle, Sri Lanka</p>
           <h2 className="text-lg font-semibold mt-4">Phone:</h2>
-          <p className="text-gray-600">+94 77 6756287</p>
+          <p className="text-gray-600">+94 77 675 6287</p>
           <h2 className="text-lg font-semibold mt-4">Email:</h2>
           <p className="text-gray-600">afras975@gmail.com</p>
     
