@@ -1,7 +1,7 @@
 import { getProducts } from "@/actions/products.action";
 import ProductShowCase from "@/components/product_show_case";
 
-export const dynamic = "force-static";
+export const dynamic = "force-static"; // for Static Site Generation (SSG)
 
 export const metadata = {
   title: "Products | Ahamed Afras",
@@ -14,7 +14,7 @@ export default async function ProductPage() {
   return <ProductShowCase initialProducts={products} />;
 }
 
-// Ensure static generation
+// for Static Site Generation (SSG)
 export async function generateStaticParams() {
   const products = await getProducts();
   return products;

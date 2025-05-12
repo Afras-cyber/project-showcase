@@ -3,7 +3,6 @@ import { useState, useMemo } from "react";
 import ProductCard from "@/components/card";
 
 export default function ProductList({ initialProducts }) {
-  
   const [filters, setFilters] = useState({
     category: "",
     minRating: "",
