@@ -1,18 +1,13 @@
+import { StarRating } from '@/lib/service';
 import Link from 'next/link';
 import React from 'react'
-import { FaStar } from "react-icons/fa";
-
 
 function Banner() {
   return (
     <div className="bg-gradient-to-r from-amber-100 to-amber-200 mt-14">
     <div className="container mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
       <div className="flex flex-col justify-center items-start space-y-6 order-2 md:order-1">
-        {/* <div>
-          <span className="px-4 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">
-            New Collection
-          </span>
-        </div> */}
+     
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
           Discover Quality Products
         </h1>
@@ -27,11 +22,7 @@ function Banner() {
         </div>
         <div className="flex items-center space-x-4 pt-2">
           <span className="flex items-center text-sm gap-1">
-            <FaStar className="text-yellow-500 text-lg" />
-            <FaStar className="text-yellow-500 text-lg" />
-            <FaStar className="text-yellow-500 text-lg" />
-            <FaStar className="text-yellow-500 text-lg" />
-            <FaStar className="text-yellow-500 text-lg" />
+            <StarRating rate={4.9} />
             <span className="ml-2 text-gray-600">
               4.9/5 (2.5k+ reviews)
             </span>

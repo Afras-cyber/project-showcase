@@ -1,18 +1,15 @@
 "use client";
-
 import { useState, useMemo } from "react";
-
 import ProductCard from "@/components/card";
 
 export default function ProductList({ initialProducts }) {
-  // State for filters and mobile filter menu
+  
   const [filters, setFilters] = useState({
     category: "",
     minRating: "",
   });
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
-  // Memoized filtered products
   const filteredProducts = useMemo(() => {
     return initialProducts.filter((product) => {
       const categoryMatch =
@@ -27,12 +24,11 @@ export default function ProductList({ initialProducts }) {
     });
   }, [initialProducts, filters]);
 
-  // Get unique categories
   const categories = [
     ...new Set(initialProducts.map((product) => product.category)),
   ];
 
-  // Handle filter changes
+  
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters((prevFilters) => ({
@@ -41,7 +37,7 @@ export default function ProductList({ initialProducts }) {
     }));
   };
 
-  // Reset filters
+
   const resetFilters = () => {
     setFilters({
       category: "",
@@ -154,7 +150,7 @@ export default function ProductList({ initialProducts }) {
         <FilterInputs />
       </div>
 
-      {/* Products Grid */}
+      
       <div className="flex flex-wrap md:gap-x-10 gap-y-8 justify-center md:justify-start">
       {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
@@ -168,9 +164,6 @@ export default function ProductList({ initialProducts }) {
           </div>
         )}
       </div>
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      
-      </div> */}
     </div>
   );
 }
