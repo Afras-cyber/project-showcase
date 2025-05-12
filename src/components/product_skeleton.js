@@ -1,7 +1,5 @@
-import { getProducts } from "@/actions/products.action";
-import ProductCard from "./card";
-export const dynamic = "force-static";
-// for Static Site Generation (SSG)
+import React from "react";
+
 const ProductSkeleton = () => (
   <div className="flex flex-col bg-white rounded-2xl shadow-[4px_4px_6px_rgba(0,0,0,0)]  shadow-gray-400/50 w-80 lg:w-70 xl:w-70 2xl:w-86 animate-pulse">
     <div className="p-5 text-center">
@@ -15,22 +13,4 @@ const ProductSkeleton = () => (
   </div>
 );
 
-const ProductList = async () => {
-  let loading = true;
-  const products = await getProducts();
-  loading = false;
-
-  return (
-    <>
-      {loading
-        ? Array.from({ length: 8 }).map((_, index) => (
-            <ProductSkeleton key={index} />
-          ))
-        : products.map((product) => (
-            <ProductCard key={product.id} {...product} />
-          ))}
-    </>
-  );
-};
-
-export default ProductList;
+export default ProductSkeleton;
